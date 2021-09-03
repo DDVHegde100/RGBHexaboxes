@@ -1,0 +1,627 @@
+body {
+  background-color: #000;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+  overflow: hidden;
+}
+
+.container > div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 7em;
+  height: 8em;
+  background-color: hsl(calc(var(--level) * 60), 50%, 80%);
+  -webkit-clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+          clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+  mix-blend-mode: lighten;
+  transform: translate(-50%, -50%) rotate(var(--rotate, 0deg)) translateY(calc(var(--translateL, 0em) / 1)) rotate(calc(var(--rotate, 0deg) * -1));
+  -webkit-animation: move 8s calc(-2s + var(--level) * 0.4s) cubic-bezier(0.5, 0, 0.5, 1) infinite;
+          animation: move 8s calc(-2s + var(--level) * 0.4s) cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  opacity: 0.75;
+}
+.container > div::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  -webkit-clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+          clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+  transform: scale(0.9);
+}
+@-webkit-keyframes move {
+  0%, 25%, 100% {
+    transform: translate(-50%, -50%) rotate(var(--rotate, 0deg)) translateY(var(--translateL, 0em)) rotate(calc(var(--rotate, 0deg) * -1));
+  }
+  50%, 75% {
+    transform: translate(-50%, -50%) rotate(var(--rotate, 0deg)) translateY(calc(var(--translateL, 0em) / 2.26)) rotate(calc(var(--rotate, 0deg) * -1));
+  }
+}
+@keyframes move {
+  0%, 25%, 100% {
+    transform: translate(-50%, -50%) rotate(var(--rotate, 0deg)) translateY(var(--translateL, 0em)) rotate(calc(var(--rotate, 0deg) * -1));
+  }
+  50%, 75% {
+    transform: translate(-50%, -50%) rotate(var(--rotate, 0deg)) translateY(calc(var(--translateL, 0em) / 2.26)) rotate(calc(var(--rotate, 0deg) * -1));
+  }
+}
+.container > div:last-child {
+  --rotate: 0deg;
+  --translateS: 0em;
+  --translateL: 0em;
+  --level: 0;
+}
+.container > div:nth-child(1) {
+  --rotate: 30deg;
+  --translateS: 3.75em;
+  --translateL: 7.5em;
+  --level: 1;
+}
+.container > div:nth-child(7) {
+  --rotate: 0deg;
+  --translateS: 5em;
+  --translateL: 13em;
+  --level: 2;
+}
+.container > div:nth-child(13) {
+  --rotate: 30deg;
+  --translateS: 4.325em;
+  --translateL: 15em;
+  --level: 2;
+}
+.container > div:nth-child(19) {
+  --rotate: 10.9deg;
+  --translateS: 7.5em;
+  --translateL: 19.85em;
+  --level: 3;
+}
+.container > div:nth-child(25) {
+  --rotate: 30deg;
+  --translateS: 6.6em;
+  --translateL: 22.5em;
+  --level: 3;
+}
+.container > div:nth-child(31) {
+  --rotate: 49.1deg;
+  --translateS: 6.6em;
+  --translateL: 19.85em;
+  --level: 3;
+}
+.container > div:nth-child(37) {
+  --rotate: 0deg;
+  --translateS: 10em;
+  --translateL: 26em;
+  --level: 4;
+}
+.container > div:nth-child(43) {
+  --rotate: 16.1deg;
+  --translateS: 9em;
+  --translateL: 27em;
+  --level: 4;
+}
+.container > div:nth-child(49) {
+  --rotate: 30deg;
+  --translateS: 8.6em;
+  --translateL: 30em;
+  --level: 4;
+}
+.container > div:nth-child(55) {
+  --rotate: 43.9deg;
+  --translateS: 9em;
+  --translateL: 27em;
+  --level: 4;
+}
+.container > div:nth-child(61) {
+  --rotate: 6.6deg;
+  --translateS: 12.5em;
+  --translateL: 32.6em;
+  --level: 5;
+}
+.container > div:nth-child(67) {
+  --rotate: 19deg;
+  --translateS: 11.45em;
+  --translateL: 34.3em;
+  --level: 5;
+}
+.container > div:nth-child(73) {
+  --rotate: 30deg;
+  --translateS: 10.85em;
+  --translateL: 37.5em;
+  --level: 5;
+}
+.container > div:nth-child(79) {
+  --rotate: 41deg;
+  --translateS: 10.85em;
+  --translateL: 34.3em;
+  --level: 5;
+}
+.container > div:nth-child(85) {
+  --rotate: 53.4deg;
+  --translateS: 11.45em;
+  --translateL: 32.6em;
+  --level: 5;
+}
+.container > div:last-child {
+  --rotate: 0deg;
+  --translateS: 0em;
+  --translateL: 0em;
+  --level: 0;
+}
+.container > div:nth-child(2) {
+  --rotate: 90deg;
+  --translateS: 3.75em;
+  --translateL: 7.5em;
+  --level: 1;
+}
+.container > div:nth-child(8) {
+  --rotate: 60deg;
+  --translateS: 5em;
+  --translateL: 13em;
+  --level: 2;
+}
+.container > div:nth-child(14) {
+  --rotate: 90deg;
+  --translateS: 4.325em;
+  --translateL: 15em;
+  --level: 2;
+}
+.container > div:nth-child(20) {
+  --rotate: 70.9deg;
+  --translateS: 7.5em;
+  --translateL: 19.85em;
+  --level: 3;
+}
+.container > div:nth-child(26) {
+  --rotate: 90deg;
+  --translateS: 6.6em;
+  --translateL: 22.5em;
+  --level: 3;
+}
+.container > div:nth-child(32) {
+  --rotate: 109.1deg;
+  --translateS: 6.6em;
+  --translateL: 19.85em;
+  --level: 3;
+}
+.container > div:nth-child(38) {
+  --rotate: 60deg;
+  --translateS: 10em;
+  --translateL: 26em;
+  --level: 4;
+}
+.container > div:nth-child(44) {
+  --rotate: 76.1deg;
+  --translateS: 9em;
+  --translateL: 27em;
+  --level: 4;
+}
+.container > div:nth-child(50) {
+  --rotate: 90deg;
+  --translateS: 8.6em;
+  --translateL: 30em;
+  --level: 4;
+}
+.container > div:nth-child(56) {
+  --rotate: 103.9deg;
+  --translateS: 9em;
+  --translateL: 27em;
+  --level: 4;
+}
+.container > div:nth-child(62) {
+  --rotate: 66.6deg;
+  --translateS: 12.5em;
+  --translateL: 32.6em;
+  --level: 5;
+}
+.container > div:nth-child(68) {
+  --rotate: 79deg;
+  --translateS: 11.45em;
+  --translateL: 34.3em;
+  --level: 5;
+}
+.container > div:nth-child(74) {
+  --rotate: 90deg;
+  --translateS: 10.85em;
+  --translateL: 37.5em;
+  --level: 5;
+}
+.container > div:nth-child(80) {
+  --rotate: 101deg;
+  --translateS: 10.85em;
+  --translateL: 34.3em;
+  --level: 5;
+}
+.container > div:nth-child(86) {
+  --rotate: 113.4deg;
+  --translateS: 11.45em;
+  --translateL: 32.6em;
+  --level: 5;
+}
+.container > div:last-child {
+  --rotate: 0deg;
+  --translateS: 0em;
+  --translateL: 0em;
+  --level: 0;
+}
+.container > div:nth-child(3) {
+  --rotate: 150deg;
+  --translateS: 3.75em;
+  --translateL: 7.5em;
+  --level: 1;
+}
+.container > div:nth-child(9) {
+  --rotate: 120deg;
+  --translateS: 5em;
+  --translateL: 13em;
+  --level: 2;
+}
+.container > div:nth-child(15) {
+  --rotate: 150deg;
+  --translateS: 4.325em;
+  --translateL: 15em;
+  --level: 2;
+}
+.container > div:nth-child(21) {
+  --rotate: 130.9deg;
+  --translateS: 7.5em;
+  --translateL: 19.85em;
+  --level: 3;
+}
+.container > div:nth-child(27) {
+  --rotate: 150deg;
+  --translateS: 6.6em;
+  --translateL: 22.5em;
+  --level: 3;
+}
+.container > div:nth-child(33) {
+  --rotate: 169.1deg;
+  --translateS: 6.6em;
+  --translateL: 19.85em;
+  --level: 3;
+}
+.container > div:nth-child(39) {
+  --rotate: 120deg;
+  --translateS: 10em;
+  --translateL: 26em;
+  --level: 4;
+}
+.container > div:nth-child(45) {
+  --rotate: 136.1deg;
+  --translateS: 9em;
+  --translateL: 27em;
+  --level: 4;
+}
+.container > div:nth-child(51) {
+  --rotate: 150deg;
+  --translateS: 8.6em;
+  --translateL: 30em;
+  --level: 4;
+}
+.container > div:nth-child(57) {
+  --rotate: 163.9deg;
+  --translateS: 9em;
+  --translateL: 27em;
+  --level: 4;
+}
+.container > div:nth-child(63) {
+  --rotate: 126.6deg;
+  --translateS: 12.5em;
+  --translateL: 32.6em;
+  --level: 5;
+}
+.container > div:nth-child(69) {
+  --rotate: 139deg;
+  --translateS: 11.45em;
+  --translateL: 34.3em;
+  --level: 5;
+}
+.container > div:nth-child(75) {
+  --rotate: 150deg;
+  --translateS: 10.85em;
+  --translateL: 37.5em;
+  --level: 5;
+}
+.container > div:nth-child(81) {
+  --rotate: 161deg;
+  --translateS: 10.85em;
+  --translateL: 34.3em;
+  --level: 5;
+}
+.container > div:nth-child(87) {
+  --rotate: 173.4deg;
+  --translateS: 11.45em;
+  --translateL: 32.6em;
+  --level: 5;
+}
+.container > div:last-child {
+  --rotate: 0deg;
+  --translateS: 0em;
+  --translateL: 0em;
+  --level: 0;
+}
+.container > div:nth-child(4) {
+  --rotate: 210deg;
+  --translateS: 3.75em;
+  --translateL: 7.5em;
+  --level: 1;
+}
+.container > div:nth-child(10) {
+  --rotate: 180deg;
+  --translateS: 5em;
+  --translateL: 13em;
+  --level: 2;
+}
+.container > div:nth-child(16) {
+  --rotate: 210deg;
+  --translateS: 4.325em;
+  --translateL: 15em;
+  --level: 2;
+}
+.container > div:nth-child(22) {
+  --rotate: 190.9deg;
+  --translateS: 7.5em;
+  --translateL: 19.85em;
+  --level: 3;
+}
+.container > div:nth-child(28) {
+  --rotate: 210deg;
+  --translateS: 6.6em;
+  --translateL: 22.5em;
+  --level: 3;
+}
+.container > div:nth-child(34) {
+  --rotate: 229.1deg;
+  --translateS: 6.6em;
+  --translateL: 19.85em;
+  --level: 3;
+}
+.container > div:nth-child(40) {
+  --rotate: 180deg;
+  --translateS: 10em;
+  --translateL: 26em;
+  --level: 4;
+}
+.container > div:nth-child(46) {
+  --rotate: 196.1deg;
+  --translateS: 9em;
+  --translateL: 27em;
+  --level: 4;
+}
+.container > div:nth-child(52) {
+  --rotate: 210deg;
+  --translateS: 8.6em;
+  --translateL: 30em;
+  --level: 4;
+}
+.container > div:nth-child(58) {
+  --rotate: 223.9deg;
+  --translateS: 9em;
+  --translateL: 27em;
+  --level: 4;
+}
+.container > div:nth-child(64) {
+  --rotate: 186.6deg;
+  --translateS: 12.5em;
+  --translateL: 32.6em;
+  --level: 5;
+}
+.container > div:nth-child(70) {
+  --rotate: 199deg;
+  --translateS: 11.45em;
+  --translateL: 34.3em;
+  --level: 5;
+}
+.container > div:nth-child(76) {
+  --rotate: 210deg;
+  --translateS: 10.85em;
+  --translateL: 37.5em;
+  --level: 5;
+}
+.container > div:nth-child(82) {
+  --rotate: 221deg;
+  --translateS: 10.85em;
+  --translateL: 34.3em;
+  --level: 5;
+}
+.container > div:nth-child(88) {
+  --rotate: 233.4deg;
+  --translateS: 11.45em;
+  --translateL: 32.6em;
+  --level: 5;
+}
+.container > div:last-child {
+  --rotate: 0deg;
+  --translateS: 0em;
+  --translateL: 0em;
+  --level: 0;
+}
+.container > div:nth-child(5) {
+  --rotate: 270deg;
+  --translateS: 3.75em;
+  --translateL: 7.5em;
+  --level: 1;
+}
+.container > div:nth-child(11) {
+  --rotate: 240deg;
+  --translateS: 5em;
+  --translateL: 13em;
+  --level: 2;
+}
+.container > div:nth-child(17) {
+  --rotate: 270deg;
+  --translateS: 4.325em;
+  --translateL: 15em;
+  --level: 2;
+}
+.container > div:nth-child(23) {
+  --rotate: 250.9deg;
+  --translateS: 7.5em;
+  --translateL: 19.85em;
+  --level: 3;
+}
+.container > div:nth-child(29) {
+  --rotate: 270deg;
+  --translateS: 6.6em;
+  --translateL: 22.5em;
+  --level: 3;
+}
+.container > div:nth-child(35) {
+  --rotate: 289.1deg;
+  --translateS: 6.6em;
+  --translateL: 19.85em;
+  --level: 3;
+}
+.container > div:nth-child(41) {
+  --rotate: 240deg;
+  --translateS: 10em;
+  --translateL: 26em;
+  --level: 4;
+}
+.container > div:nth-child(47) {
+  --rotate: 256.1deg;
+  --translateS: 9em;
+  --translateL: 27em;
+  --level: 4;
+}
+.container > div:nth-child(53) {
+  --rotate: 270deg;
+  --translateS: 8.6em;
+  --translateL: 30em;
+  --level: 4;
+}
+.container > div:nth-child(59) {
+  --rotate: 283.9deg;
+  --translateS: 9em;
+  --translateL: 27em;
+  --level: 4;
+}
+.container > div:nth-child(65) {
+  --rotate: 246.6deg;
+  --translateS: 12.5em;
+  --translateL: 32.6em;
+  --level: 5;
+}
+.container > div:nth-child(71) {
+  --rotate: 259deg;
+  --translateS: 11.45em;
+  --translateL: 34.3em;
+  --level: 5;
+}
+.container > div:nth-child(77) {
+  --rotate: 270deg;
+  --translateS: 10.85em;
+  --translateL: 37.5em;
+  --level: 5;
+}
+.container > div:nth-child(83) {
+  --rotate: 281deg;
+  --translateS: 10.85em;
+  --translateL: 34.3em;
+  --level: 5;
+}
+.container > div:nth-child(89) {
+  --rotate: 293.4deg;
+  --translateS: 11.45em;
+  --translateL: 32.6em;
+  --level: 5;
+}
+.container > div:last-child {
+  --rotate: 0deg;
+  --translateS: 0em;
+  --translateL: 0em;
+  --level: 0;
+}
+.container > div:nth-child(6) {
+  --rotate: 330deg;
+  --translateS: 3.75em;
+  --translateL: 7.5em;
+  --level: 1;
+}
+.container > div:nth-child(12) {
+  --rotate: 300deg;
+  --translateS: 5em;
+  --translateL: 13em;
+  --level: 2;
+}
+.container > div:nth-child(18) {
+  --rotate: 330deg;
+  --translateS: 4.325em;
+  --translateL: 15em;
+  --level: 2;
+}
+.container > div:nth-child(24) {
+  --rotate: 310.9deg;
+  --translateS: 7.5em;
+  --translateL: 19.85em;
+  --level: 3;
+}
+.container > div:nth-child(30) {
+  --rotate: 330deg;
+  --translateS: 6.6em;
+  --translateL: 22.5em;
+  --level: 3;
+}
+.container > div:nth-child(36) {
+  --rotate: 349.1deg;
+  --translateS: 6.6em;
+  --translateL: 19.85em;
+  --level: 3;
+}
+.container > div:nth-child(42) {
+  --rotate: 300deg;
+  --translateS: 10em;
+  --translateL: 26em;
+  --level: 4;
+}
+.container > div:nth-child(48) {
+  --rotate: 316.1deg;
+  --translateS: 9em;
+  --translateL: 27em;
+  --level: 4;
+}
+.container > div:nth-child(54) {
+  --rotate: 330deg;
+  --translateS: 8.6em;
+  --translateL: 30em;
+  --level: 4;
+}
+.container > div:nth-child(60) {
+  --rotate: 343.9deg;
+  --translateS: 9em;
+  --translateL: 27em;
+  --level: 4;
+}
+.container > div:nth-child(66) {
+  --rotate: 306.6deg;
+  --translateS: 12.5em;
+  --translateL: 32.6em;
+  --level: 5;
+}
+.container > div:nth-child(72) {
+  --rotate: 319deg;
+  --translateS: 11.45em;
+  --translateL: 34.3em;
+  --level: 5;
+}
+.container > div:nth-child(78) {
+  --rotate: 330deg;
+  --translateS: 10.85em;
+  --translateL: 37.5em;
+  --level: 5;
+}
+.container > div:nth-child(84) {
+  --rotate: 341deg;
+  --translateS: 10.85em;
+  --translateL: 34.3em;
+  --level: 5;
+}
+.container > div:nth-child(90) {
+  --rotate: 353.4deg;
+  --translateS: 11.45em;
+  --translateL: 32.6em;
+  --level: 5;
+}
